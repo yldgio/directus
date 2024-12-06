@@ -355,6 +355,14 @@ This includes:
 
   Make sure to explicitly prefix the value with `json` so it will be treated as a json array.
 
+- Redis `REDIS_TLS__` Connection configuration:
+  if the redis server you want to connect to is hosted behind a TLS proxy (e.g. stunnel) or is offered by a PaaS service that supports TLS connection (e.g. Redis.com, Azure), you need to provide additional configurations such as:
+  | Variable                        | Description                               | Default Value |
+  | ------------------------------- | ----------------------------------------- | ------------- |
+  | `REDIS_TLS__HOST`               | Hostname of the Redis instance            | `"127.0.0.1"` |                                                                                               
+  | `REDIS_TLS__REJECT_UNAUTHORIZED`| true/false                                | --            |
+
+  [see ioredis tls options](https://github.com/redis/ioredis#tls-options) for more details.
 :::
 
 ## Data Retention
